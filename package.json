@@ -31,7 +31,7 @@
     "async": "2.0.1",
     "aws4": "^1.4.1",
     "optimist": "latest",
-    "request": "2.x.x"
+    "request": "2.75.0"
   },
   "devDependencies": {
     "mocha": "latest",
