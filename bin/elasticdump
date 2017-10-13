@@ -26,6 +26,7 @@ var defaults = {
   format: '',
   'ignore-errors': false,
   scrollTime: '10m',
+  ignoreUnavailable: false,
   timeout: null,
   toLog: null,
   quiet: false,
