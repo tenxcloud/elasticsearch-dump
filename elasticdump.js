@@ -135,7 +135,7 @@ elasticdump.prototype.validateOptions = function () {
   return validationErrors
 }
 
-elasticdump.prototype.dump = function (callback, continuing, limit, offset, totalWrites) {
+elasticdump.prototype.dump = function (callback, continuing, limit, offset, totalWrites, scope) {
   var self = this
 
   if (self.validationErrors.length > 0) {
@@ -169,7 +169,7 @@ elasticdump.prototype.dump = function (callback, continuing, limit, offset, tota
             })
           }
         }
-        self.output.set(data, limit, offset, function (err, writes) {
+        self.output.set(data, limit, offset, scope, function (err, writes) {
           var toContinue = true
 
           if (err) {
@@ -188,7 +188,7 @@ elasticdump.prototype.dump = function (callback, continuing, limit, offset, tota
           }
 
           if (data.length > 0 && toContinue) {
-            self.dump(callback, true, limit, offset, totalWrites)
+            self.dump(callback, true, limit, offset, totalWrites, scope)
           } else if (toContinue) {
             self.log('Total Writes: ' + totalWrites)
             self.log('dump complete')

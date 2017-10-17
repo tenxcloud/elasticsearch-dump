@@ -94,10 +94,15 @@ Usage: elasticdump --input SOURCE --output DESTINATION [OPTIONS]
                     value of field 'f1':
                         doc._source["f2"] = doc._source.f1 * 2;
 
---httpAuthFile      When using http auth provide credentials in ini file in form
+--httpAuthFile
+                    When using http auth provide credentials in ini file in form
                     `user=<username>
                     password=<password>`
-
+--ignoreUnavailable
+                     This setting must be either True or False. When the
+                     ignoreUnavailable option is False and an index is
+                     missing the snapshot request will fail. The default
+                     value of this setting is False
 --help
                     This page
 

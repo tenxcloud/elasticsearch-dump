@@ -26,7 +26,6 @@ var defaults = {
   format: '',
   'ignore-errors': false,
   scrollTime: '10m',
-  ignoreUnavailable: false,
   timeout: null,
   toLog: null,
   quiet: false,
@@ -37,7 +36,8 @@ var defaults = {
   awsIniFileName: null,
   sessionToken: null,
   transform: null,
-  httpAuthFile: null
+  httpAuthFile: null,
+  ignoreUnavailable: false,
 }
 var jsonParsedOpts = ['searchBody', 'headers']
 var options = {}

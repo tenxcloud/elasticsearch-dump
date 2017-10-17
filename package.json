@@ -1,6 +1,6 @@
 {
   "author": "Evan Tahler <evantahler@gmail.com>",
-  "name": "elasticdump",
+  "name": "elasticdump-tenx",
   "description": "import and export tools for elasticsearch",
   "version": "3.3.1",
   "license": "Apache-2.0",
