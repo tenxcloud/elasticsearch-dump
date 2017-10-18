@@ -85,8 +85,12 @@ var elasticdump = function (input, output, options) {
     OutputProto = require(path.join(__dirname, 'lib', 'transports', self.outputType))[self.outputType]
     self.output = (new OutputProto(self, self.options.output, outputOpts))
   } else if (self.options.outputTransport) {
-    self.outputType = String(self.options.outputTransport)
-    OutputProto = require(self.options.outputTransport)
+    if (typeof self.options.outputTransport === 'object') {
+      OutputProto = self.options.outputTransport
+    } else {
+      self.outputType = String(self.options.outputTransport)
+      OutputProto = require(self.options.outputTransport)
+    }
     var outputProtoKeys = Object.keys(OutputProto)
     self.output = (new OutputProto[outputProtoKeys[0]](self, self.options.output, self.options['output-index']))
   }
